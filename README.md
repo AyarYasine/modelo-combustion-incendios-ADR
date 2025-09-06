@@ -1,4 +1,4 @@
-[03_ejecucion_rapida.md](https://github.com/user-attachments/files/22192132/03_ejecucion_rapida.md)# Modelo de combustión (0D ADR) + Cinética lignocelulósica — **TFG**
+# Modelo de combustión (0D ADR) + Cinética lignocelulósica — **TFG**
 
 Este repositorio contiene la **memoria del TFG** y el **código** para:
 - procesar datos TGA/DSC de **celulosa**, **xilano** y **lignina** en **aire** y **N₂**,
