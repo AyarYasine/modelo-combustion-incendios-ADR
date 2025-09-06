@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cita este repositorio si te resulta útil."
+title: "Modelo 0D ADR + Cinética lignocelulósica"
+authors:
+  - family-names: "el Ayar"
+    given-names: "Yasine"
+    orcid: ""
+date-released: "2025-09-06"
+version: "0.1.0"
+repository-code: "https://github.com/USER/modelo-combustion-incendios-ADR"
