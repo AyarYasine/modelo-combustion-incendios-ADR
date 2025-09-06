@@ -24,17 +24,6 @@ Este repositorio contiene la **memoria del TFG** y el **código** para:
   python -m pip install --upgrade pip
   pip install -r requirements.txt
   ```
-
-### ⚠️ Nota sobre Plotly (Chart Studio)
-El script incluye la subida de figuras interactivas (fase Criado) a **Plotly Chart Studio**. **No publiques tus credenciales** en el código. Usa variables de entorno:
-```python
-# Sustituye el inicio de sesión duro por:
-import os, chart_studio.plotly as py
-py.sign_in(os.getenv("PLOTLY_USERNAME"), os.getenv("PLOTLY_API_KEY"))
-```
-Crea un archivo `.env` (no se versiona) a partir de `.env.example` con tus claves.
-Si no quieres usar Plotly online, comenta las líneas de `sign_in` y deja solo el guardado local de HTML.
-
 ---
 
 ## 2) Estructura de carpetas (datos y resultados)
