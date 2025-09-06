@@ -1,4 +1,4 @@
-# Modelo de combustión (0D ADR) + Cinética lignocelulósica — **TFG**
+[03_ejecucion_rapida.md](https://github.com/user-attachments/files/22192132/03_ejecucion_rapida.md)# Modelo de combustión (0D ADR) + Cinética lignocelulósica — **TFG**
 
 Este repositorio contiene la **memoria del TFG** y el **código** para:
 - procesar datos TGA/DSC de **celulosa**, **xilano** y **lignina** en **aire** y **N₂**,
@@ -72,14 +72,35 @@ En `DatosMuestras/VelocidadCalentamientoXX/` usa `muestra1.csv`, ..., `muestra5.
 
 ## 3) Ejecución rápida (con datos ya incluidos)
 
-Desde la **raíz** del repo:
+**Desde la raíz del repo:**
 ```bash
 python code/KineticsParameters.py
 ```
-Por defecto se ejecuta la fase inicial de tratamiento de datos experimentales en el bloque `__main__`:
-- `tratamiento_datos_exp(['DatosComponentes','DatosMuestras'])`
 
-Para activar/desactivar fases, abre `code/KineticsParameters.py` y comenta/descomenta llamadas en el `__main__`.
+> ⚠️ **Muy importante — Ejecutar Fase 0 siempre.**  
+> La **Fase 0** (`tratamiento_datos_exp`) rellena el diccionario global **`DATOS_PROCESADOS`**, que es consumido por el resto de fases (isoconversional, Criado, Coats–Redfern, reconstrucciones y acoplamientos).  
+> **Recomendación:** ejecuta **Fase 0** junto con cualquier otra fase que vayas a lanzar en la misma sesión/ejecución. Si omites Fase 0, es probable que encuentres errores por datos faltantes.
+
+**Ejemplo de orden recomendado en el `__main__`:**
+```python
+if __name__ == "__main__":
+    # Fase 0: SIEMPRE (prepara DATOS_PROCESADOS)
+    tratamiento_datos_exp(['DatosComponentes','DatosMuestras'])
+
+    # A partir de aquí, activa lo que necesites:
+    # fase1_isoconversional()
+    # fase1_criado()
+    # fase1_cr()
+    # reconstruccion_celulosa(); reconstruccion_xilano(); reconstruccion_lignina()
+    # reconstruccion_muestras()
+    # simulacion_muestra_betas()
+    # funcion_temperatura = iso834_modificada  # o curva_logaritmica / curva_exponencial
+    # simulacion_incendio()
+    # analisis_desacoplado()
+    # prediccion_acoplada()
+```
+
+Para activar/desactivar fases, abre `code/KineticsParameters.py` y comenta/descomenta llamadas en el `__main__`
 
 ---
 
