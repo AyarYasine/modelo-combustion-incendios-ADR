@@ -10,8 +10,9 @@ from scipy.integrate import solve_ivp
 from scipy.stats import linregress
 from plotly.subplots import make_subplots
 
-# Log In API Plotly - Esto es para poder guardar los graficos en servidores de plotly y acceder a ellos con URLs publicas.
-py.sign_in('yass777', 'B0S2QiGv18iieGeNTd46')
+# Log In API Plotly - Esto es para poder guardar los graficos en servidores de plotly y acceder a ellos con URLs publicas. Se deberá crear una cuenta en Plotly.com
+# No es obligatorio, se puede ejecutar el programa sin esto. En ese caso, las gráficas se guardaran en .html en el directorio local
+py.sign_in('USUARIO', 'CONTRASEÑA API')
 
 # Constantes globales
 R = 8.3144              # Constante de los gases en J/mol·K
